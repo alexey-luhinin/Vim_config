@@ -1,35 +1,4 @@
--- General settings
-
-vim.o.syntax = "on"  -- Enable syntax highlighting
-vim.o.filetype = "on"  -- Enable filetype detection
-vim.o.termguicolors = true  -- Enable true colors
-vim.o.number = true  -- Show line numbers
-vim.o.relativenumber = true  -- Show relative line numbers
-vim.o.background = "dark"  -- Set background color
-vim.o.history = 10000  -- Set command history length
-vim.o.undodir = vim.fn.expand("~/.vim/undodir")  -- Set undo directory
-vim.o.undofile = true  -- Enable persistent undo
-vim.o.swapfile = false
-vim.o.undolevels = 10000
-vim.o.encoding = "utf-8"
-vim.o.hlsearch = false  -- Highlight search results
-vim.o.incsearch = true  -- Incremental search
-vim.o.spell = true  -- Disable spell check
-vim.o.spelllang = "en_us"  -- Set spell check language
-vim.o.wrap = true  -- Disable line wrapping
-vim.o.colorcolumn = "80"
-
--- Tabs settings
-vim.o.tabstop = 4  -- Number of spaces in a tab
-vim.o.softtabstop = 0  -- Soft tab stop
-vim.o.shiftwidth = 4  -- Number of spaces for auto-indent
-vim.o.expandtab = true  -- Convert tabs to spaces
-
-vim.cmd('colorscheme gruvbox')  -- Set color scheme
-
--- Set leader key
-vim.g.mapleader = ','
-
+require('settings')
 -- Plugin setup using packer.nvim (assuming you use packer instead of vim-plug)
 require('packer').startup(function(use)
     -- List your plugins here
@@ -72,8 +41,6 @@ null_ls.setup({
         null_ls.builtins.formatting.black,
     },
 })
-
-vim.opt.signcolumn = 'yes'
 
 -- Add cmp_nvim_lsp capabilities settings to lspconfig
 -- -- This should be executed before you configure any language server
